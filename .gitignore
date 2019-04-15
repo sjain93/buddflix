@@ -25,3 +25,4 @@ yarn-error.log*
 # django
 *__pycache__*
 *.sqlite3
+node_modules
