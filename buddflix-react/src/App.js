@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AgeVerification from './AgeVerification';
+import AgeVerification from './AgeVerification/AgeVerification';
 import Categories from './Categories';
 import WeedList from './WeedList';
 import Strain from './Strain';
