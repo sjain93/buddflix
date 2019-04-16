@@ -8,6 +8,8 @@ import Strain from './Strain';
 import MovieList from './MovieList';
 import Movie from './Movie';
 import Trailer from './Trailer';
+import Modal from './Modal/Modal';
+
 
 class App extends Component {
   render() {
@@ -15,15 +17,27 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+
           
-          <AgeVerification />
+          <div id='modal-root'></div>
+          <AgeVerification 
+            toggle={show => <button onClick={show}>Show</button>}
+            content={hide => (
+              
+              <Modal>
+              <button onClick={hide}>Close</button>
+              </Modal>  
+              
+            )}
+          />
           <Categories />
           <WeedList />
           <Strain />
           <MovieList />
           <Movie />
           <Trailer />
-          
+        
+        
         </header>
       </div>
     );
