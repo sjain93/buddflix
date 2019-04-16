@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
-import AgeVerification from './AgeVerification';
-import Categories from './Categories';
-import WeedList from './WeedList';
-import Strain from './Strain';
-import MovieList from './MovieList';
-import Movie from './Movie';
-import Trailer from './Trailer';
+import Navigation from './Navigation';
+
 
 class App extends Component {
   render() {
@@ -16,13 +11,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           BuddFlix 
-          <AgeVerification />
-          <Categories />
-          <WeedList />
-          <Strain />
-          <MovieList />
-          <Movie />
-          <Trailer />
+          <Navigation />
           
         </header>
       </div>
