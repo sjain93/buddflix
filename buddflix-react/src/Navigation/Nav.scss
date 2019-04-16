@@ -1,0 +1,45 @@
+header {
+    background-color: black;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    a {
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+        grid-column: 4 / 5;
+    }
+    li {
+        display: inline-block;
+    }
+    img {
+        max-width: 50%;
+    }
+}
+
+.link-hover {
+    display: inline-block;
+    position: relative;
+    padding: 5px;
+}
+
+.link-hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out; 
+}
+
+.link-hover:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
