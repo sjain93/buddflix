@@ -4,10 +4,14 @@ import './Nav.scss'
 import Categories from "../Categories";
 import About from '../About';
 import Home from '../Home';
+import logo from '../logo.png';
 
 const Navigation = () => {
     return (
     <Router>
+    <div className='nav-container'>
+    <div className='navbar'>
+        <img src={logo} className="App-logo" alt="logo" />
             <nav>
                 <ul>
                     <li className='link-hover'>
@@ -21,7 +25,8 @@ const Navigation = () => {
                     </li>
                 </ul>
             </nav>
-
+    </div>
+    </div>
             
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />

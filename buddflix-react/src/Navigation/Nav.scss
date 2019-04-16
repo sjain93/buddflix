@@ -1,21 +1,35 @@
 @import '../variables.scss';
 
+.App-logo {
+    position: fixed;
+    z-index: 1;
+    max-width: 4%;
+}
+
+
 nav {
     background-color: black;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px 0;
     a {
         color: white;
         text-decoration: none;
         padding: 5px;
-        grid-column: 4 / 5;
         font-family: $link-font;
+        margin-left: 25px; 
     }
     li {
         display: inline-block;
     }
 
+}
+
+.navbar {
+    visibility: hidden;
+}
+
+.nav-container:hover .navbar {
+    visibility: visible;
 }
 
 .link-hover {
@@ -28,6 +42,7 @@ nav {
     content: '';
     position: absolute;
     width: 100%;
+    margin: 0 auto;
     transform: scaleX(0);
     height: 2px;
     bottom: 0;
@@ -41,7 +56,6 @@ nav {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
 
 
 
