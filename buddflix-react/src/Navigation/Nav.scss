@@ -1,20 +1,21 @@
-header {
+@import '../variables.scss';
+
+nav {
     background-color: black;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     a {
         color: white;
         text-decoration: none;
         padding: 5px;
         grid-column: 4 / 5;
+        font-family: $link-font;
     }
     li {
         display: inline-block;
     }
-    img {
-        max-width: 50%;
-    }
+
 }
 
 .link-hover {
@@ -40,6 +41,7 @@ header {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
 
 
 
