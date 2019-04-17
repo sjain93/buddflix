@@ -1,7 +1,6 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
-import './modal.css';
-
+import ReactDOM from 'react-dom';
+import './modal.css'
 
 const Modal = ({ children }) => (
     ReactDOM.createPortal(
@@ -9,9 +8,7 @@ const Modal = ({ children }) => (
             {children}
         </div>,
         document.getElementById('modal-root')
-
     )
 );
-
 
 export default Modal;
