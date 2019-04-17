@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import AgeVerification from './AgeVerification/AgeVerification';
 import Navigation from './Navigation/Navigation';
 
