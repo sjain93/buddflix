@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
-import strain from '../strain.png';
+import strain from '../strain.jpg';
 import welcome from '../welcomeBanner.png';
 import Avengers from '../Avengers.png'
 import './Slideshow.scss';
