@@ -1,0 +1,61 @@
+@import '../variables.scss';
+
+.App-logo {
+    position: fixed;
+    z-index: 1;
+    max-width: 4%;
+}
+
+
+nav {
+    background-color: black;
+    max-width: 100%;
+    padding: 5px 0;
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: $link-font; 
+    }
+    li {
+        display: inline-block;
+    }
+
+}
+
+.navbar {
+    visibility: hidden;
+}
+
+.nav-container:hover .navbar {
+    visibility: visible;
+}
+
+.link-hover {
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+    left: 20px;
+}
+
+.link-hover::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out; 
+}
+
+.link-hover:hover::before{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+
