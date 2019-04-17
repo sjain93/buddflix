@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AgeVerification from './AgeVerification/AgeVerification';
 import Navigation from './Navigation/Navigation';
+import TMDB from './TMDB';
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
               
             )}
           />
+
         </>
 
     );
