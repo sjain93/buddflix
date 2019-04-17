@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
+from django.urls import path
 from buddflix.resources import RaceResource, CategoryResource, FlavourResource, EffectResource
+from buddflix.views import get_races, get_categories, get_effects, get_all_strains, get_flavours
 
 race_resource = RaceResource()
 category_resource = CategoryResource()
@@ -27,6 +29,11 @@ urlpatterns = [
     url('api/', include(race_resource.urls)),
     url('api/', include(category_resource.urls)),
     url('api/', include(flavour_resource.urls)),
-    url('api/', include(effect_resource.urls))
-    
+    url('api/', include(effect_resource.urls)),
+    path('races', get_races),
+    path('categories', get_categories),
+    path('effects', get_effects),
+    path('effects/<str:type>', get_effects),
+    path('strains', get_all_strains),
+    path('flavours', get_flavours),
 ]
