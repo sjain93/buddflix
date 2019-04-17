@@ -2,6 +2,7 @@ import React from 'react';
 import useForm from 'react-hook-form';
 import './age.css';
 import ToggleContent from '../ToggleContent';
+import Modal from '../Modal/Modal';
 
 
 
@@ -17,6 +18,7 @@ const AgeVerification = () => {
         <ToggleContent
         toggle={show => <button onClick={show}>Open</button>}
             content={hide => (
+                <Modal>
             <form onSubmit={handleSubmit(onSubmit)} >
                 <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
                 {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
@@ -24,6 +26,7 @@ const AgeVerification = () => {
                 <input type="submit" />
             <button onClick={hide}>Close</button>
             </form>
+                </Modal>
             )}
 
         />
