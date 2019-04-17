@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-from buddflix.resources import RaceResource
+from buddflix.resources import RaceResource, CategoryResource, FlavourResource
 
 race_resource = RaceResource()
+category_resource = CategoryResource()
+flavour_resource = FlavourResource()
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('api/', include(race_resource.urls))
+    url('api/', include(race_resource.urls)),
+    url('api/', include(category_resource.urls)),
+    url('api/', include(flavour_resource.urls))
 ]
