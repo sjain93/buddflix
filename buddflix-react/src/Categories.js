@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'axios';
 import axios from 'axios';
 
-const url = 'http://localhost:8000/api/strain/?race=1'
+const url = 'http://localhost:8000/api/strain/?race=2'
 
 
 
@@ -16,7 +16,7 @@ const Categories = () => {
 
     // getStrains()
     // console.log(strains)
-    const [strains, setStrains] = useState()
+    const [strains, setStrains] = useState([])
 
     useEffect(() => {
         axios.get(url).then(response => {
@@ -25,7 +25,7 @@ const Categories = () => {
             console.log(results)
             results.forEach(element => {
 
-                newStrains.push(element.name);
+                newStrains.push(element);
             });
             setStrains(newStrains);
         });
@@ -35,7 +35,7 @@ const strainDisplay = strains.map((weed, index) => (
         <div className="strains" key={index}>
             <h2 className='strain-name'>{weed.name}</h2>
             <ul>
-                <li>weed.effects</li>
+                <li>{weed.effects}</li>
             </ul>
         </div>
         ));
