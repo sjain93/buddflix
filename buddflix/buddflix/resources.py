@@ -31,7 +31,7 @@ class EffectResource(ModelResource):
     
 class StrainResource(ModelResource):
     race = fields.ForeignKey(
-        CategoryResource, attribute='race', null=True, full=True)
+        RaceResource, attribute='race', null=True, full=True)
     effects = fields.ToManyField(
         'buddflix.resources.EffectResource',
         'effects',
@@ -43,7 +43,8 @@ class StrainResource(ModelResource):
     class Meta:
         queryset = Strain.objects.all()
         filtering = {
-            'race': ALL,
+            'name': ALL_WITH_RELATIONS,
+            'race': ALL_WITH_RELATIONS,
             'effects': ALL_WITH_RELATIONS,
             'flavours': ALL_WITH_RELATIONS
         }
