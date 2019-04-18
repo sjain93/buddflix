@@ -21,19 +21,21 @@ const properties = {
 }
 
 const api_key = process.env.REACT_APP_TMDB_API_KEY
-const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`
+// const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`
+const url = `https://api.themoviedb.org/3/keyword/54169/movies?api_key=${api_key}&language=en-US&include_adult=false`
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
 
 const Slideshow = () => {
     const [images, setImages] = useState(slideImages);
 
+
     useEffect(() => {
         axios.get(url).then(response => {
-            let newImages = [welcome];
-            const results = response.data.results.slice(0, 3);
+            let newImages = [{'url': welcome, 'title': null }];
+            const results = response.data.results.slice(3, 7);
             results.forEach(element => {
-                newImages.push(imgBaseUrl + element.backdrop_path);
+                newImages.push({'url':imgBaseUrl + element.backdrop_path, 'title': element.title});
             });
             setImages(newImages);
         });
@@ -41,7 +43,8 @@ const Slideshow = () => {
 
     const slides = images.map((img, index) => (
         <div className="each-slide" key={index}>
-            <div style={{'backgroundImage': `url(${img})`}} />
+            <div style={{'backgroundImage': `url(${img.url})`}} />
+            <h2 className='slideshow-title'>{img.title}</h2>
         </div>
     ));
 
