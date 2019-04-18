@@ -1,49 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import 'axios';
+import Strains from './Strain';
 import axios from 'axios';
 
-const url = 'http://localhost:8000/api/strain/?race=2'
-
-
+const url = 'http://localhost:8000/api/race/'
 
 const Categories = () => {
-    // const strains = []
-    // const getStrains = () => {
-    //     axios.get(url).then(response => {
-    //     strains.push(response.objects)
-    // }
-    //     )}
-
-    // getStrains()
-    // console.log(strains)
-    const [strains, setStrains] = useState([])
+    const [races, setRaces] = useState([]);
+    const [selectedRace, setSelectedRace] = useState({});
 
     useEffect(() => {
         axios.get(url).then(response => {
-            let newStrains = [];
             const results = response.data.objects;
-            console.log(results)
-            results.forEach(element => {
-
-                newStrains.push(element);
-            });
-            setStrains(newStrains);
+            setRaces(results);
         });
     }, []);
 
-const strainDisplay = strains.map((weed, index) => (
-        <div className="strains" key={index}>
-            <h2 className='strain-name'>{weed.name}</h2>
-            <ul>
-                <li>{weed.effects}</li>
-            </ul>
+    return (
+        <div>
+            {races.map(race => (
+                <button onClick={() => setSelectedRace(race)} key={race.id}>
+                    {race.name}
+                </button>
+            ))}
+            <Strains selectedRace={selectedRace} />
         </div>
-        ));
-return (
-    <div>
-    {strainDisplay}
-    </div>
-)
+    )
 }
 
 export default Categories;
