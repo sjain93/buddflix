@@ -29,16 +29,6 @@ const imgBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
 const Slideshow = () => {
     const [images, setImages] = useState(slideImages);
 
-    // useEffect(() => {
-    //     axios.get(url).then(response => {
-    //         let newImages = [welcome];
-    //         const results = response.data.results.slice(3, 7);
-    //         results.forEach(element => {
-    //             newImages.push(imgBaseUrl + element.backdrop_path);
-    //         });
-    //         setImages(newImages);
-    //     });
-    // }, []);
 
     useEffect(() => {
         axios.get(url).then(response => {

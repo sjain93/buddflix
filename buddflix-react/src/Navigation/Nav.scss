@@ -12,7 +12,7 @@ nav {
     max-width: 100%;
     padding: 5px 0;
     a {
-        color: white;
+        color: $white;
         text-decoration: none;
         font-family: $link-font; 
     }
@@ -24,10 +24,14 @@ nav {
 
 .navbar {
     visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .nav-container:hover .navbar {
     visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
 }
 
 .link-hover {
