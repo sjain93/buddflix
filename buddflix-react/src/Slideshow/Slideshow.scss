@@ -1,3 +1,7 @@
+@import '../variables.scss';
+
+
+
 .slide-container {
     width: 100px;
     height: 500px;
@@ -12,5 +16,16 @@
     background-repeat: no-repeat;
     background-position: center; 
     height: 500px;
+    position: relative;
+}
+
+.slideshow-title {
+    position: absolute;
+    top: 420px; 
+    font-family: $link-font;
+    z-index: 1;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.801);
+    padding: 0 5px;
 }
 
