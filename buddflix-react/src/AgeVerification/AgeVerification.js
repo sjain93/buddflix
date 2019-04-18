@@ -1,38 +1,41 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import useForm from 'react-hook-form';
 import './age.css';
-import ToggleContent from '../ToggleContent';
-import Modal from '../Modal/Modal';
 
-
-
-
-
+const AGE_KEY = 'ageVerified';
 
 const AgeVerification = () => {
+    let ageVerified = false // !window.localStorage.getItem(AGE_KEY);
+    // if (date greater than 24 hours) {
+
+    // }
+
+    const [visible, setVisible] = useState(!ageVerified);
+
     const { register, handleSubmit, errors } = useForm() // initialise the hook
-    const onSubmit = (data) => { console.log(data) } // callback when validation pass
+    const onSubmit = (data) => {
+        setVisible(false);
+        window.localStorage.setItem(AGE_KEY, true);
+
+    }
 
     return (
+        <>
+        {visible &&
+            <div className="modal">
+                <form onSubmit={handleSubmit(onSubmit)} >
+                    <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
+                    {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
 
-        <ToggleContent
-        toggle={show => <button onClick={show}>Open</button>}
-            content={hide => (
-                <Modal>
-            <form onSubmit={handleSubmit(onSubmit)} >
-                <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
-                {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
-
-                <input type="submit" />
-            <button onClick={hide}>Close</button>
-            </form>
-                </Modal>
-            )}
-
-        />
-
-    )      
+                    <input type="submit" />
+                </form>
+            </div>
+        }
+        </>
+    )
 }
 
 
 export default AgeVerification;
+
