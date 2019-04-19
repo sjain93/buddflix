@@ -5,7 +5,7 @@ const Strain = ({ weed, index }) => {
 
     const effectList = weed.effects.map((effect, weedIndex) => {
         return (
-            <li key={weedIndex}>{effect}</li>
+            <li key={weedIndex}>{effect.name}</li>
         )
     })
 
