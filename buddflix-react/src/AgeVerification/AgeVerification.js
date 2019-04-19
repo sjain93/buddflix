@@ -1,7 +1,11 @@
 
 import React, { useState } from 'react';
 import useForm from 'react-hook-form';
+<<<<<<< HEAD
 import './age.css';
+=======
+import './age.scss';
+>>>>>>> modal
 import welcome from '../welcomeBanner.png';
 
 
