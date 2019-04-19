@@ -1,12 +1,26 @@
-h1 {
-    color: dodgerblue;
+
+p {
+    color: white;
+    text-align: center;
 }
 
+h1 {
+  text-align: center;
+  color: white;
+}
+
+img {
+    padding-right: 200px;
+}
 
 .modal {
-  position: fixed;
-  top: 12px;
-  padding: 12px;
-  background-color: white;
-  border: 1px solid grey;
+    max-height: calc(100% - 100px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 200px;
+    background: #fd3535;
+    text-align: center;
+
 }

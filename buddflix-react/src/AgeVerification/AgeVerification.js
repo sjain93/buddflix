@@ -10,7 +10,6 @@ const AgeVerification = () => {
     // if (date greater than 24 hours) {
 
     // }
-
     const [visible, setVisible] = useState(!ageVerified);
 
     const { register, handleSubmit, errors } = useForm() // initialise the hook
@@ -25,6 +24,9 @@ const AgeVerification = () => {
         {visible &&
             <div className="modal">
                 <form onSubmit={handleSubmit(onSubmit)} >
+                    <img src={'welcomeBanner.png'} alt="Welcome" className="img-responsive"></img>
+                    <p>Please Enter Your Age</p>
+                    
                     <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
                     {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
 
