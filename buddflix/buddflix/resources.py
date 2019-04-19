@@ -56,7 +56,10 @@ class StrainResource(ModelResource):
         effectsArray = []
         flavoursArray = []
         for b in bundle.data['effects']:
-            effectsArray.append(b.data['name'])
+            to_add = {}
+            to_add['name'] = b.data['name']
+            to_add['category'] = b.data['category'].data['name']
+            effectsArray.append(to_add)
         bundle.data['effects']= effectsArray
         for b in bundle.data['flavours']:
             flavoursArray.append(b.data['name'])
