@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Movie from './Movie'
 
 
-const Strain = ({ weed, index }) => {
+const Strain = ({ weed, index, }) => {
 
-    const effectList = weed.effects.map((effect) => {
-        return (
-            <li key={index}>{effect}</li>
-        )
-    })
+
+    const [strainSelected, setStrainSelected] = useState({})
+
 
     return (
-        <div className="strains" key={index}>
-            <h2 className='strain-name'>{weed.name}</h2>
-            <ul>
-                {effectList}
-            </ul>
+    <>
+        <div>
+                <button onClick={() => setStrainSelected(weed)} key={weed.id}>
+                    {weed.name}
+                </button>
         </div>
+            <Movie strainSelected={strainSelected} key={strainSelected.id} />
+
+    </>
+
+
     )
+
 }
 
 export default Strain;
