@@ -33,9 +33,6 @@ console.log(positiveEffects);
 // console.log(effectList());
 
 
-
-
-
 return (
     <>
         {/* we need to grab the strain
@@ -48,12 +45,4 @@ return (
 ) 
 }
 
-    // useEffect(() => {
-    //     if (strainSelected.id) {
-            
-    //     }   
-    // },[])
-
-        
-    
 export default Movie;
