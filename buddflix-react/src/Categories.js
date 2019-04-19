@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Strains from './Strain';
+import StrainList from './StrainList';
 import axios from 'axios';
 
 const url = 'http://localhost:8000/api/race/'
@@ -22,7 +22,7 @@ const Categories = () => {
                     {race.name}
                 </button>
             ))}
-            <Strains selectedRace={selectedRace} />
+            <StrainList selectedRace={selectedRace} />
         </div>
     )
 }
