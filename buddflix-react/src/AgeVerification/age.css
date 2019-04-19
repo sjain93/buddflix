@@ -9,9 +9,6 @@ h1 {
   color: white;
 }
 
-img {
-    padding-right: 200px;
-}
 
 .modal {
     max-height: calc(100% - 100px);
