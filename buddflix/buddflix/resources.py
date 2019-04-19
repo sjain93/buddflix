@@ -43,7 +43,7 @@ class StrainResource(ModelResource):
     class Meta:
         queryset = Strain.objects.all()
         filtering = {
-            'name': ALL_WITH_RELATIONS,
+            'name': (ALL_WITH_RELATIONS, 'icontains'),
             'race': ALL_WITH_RELATIONS,
             'effects': ALL_WITH_RELATIONS,
             'flavours': ALL_WITH_RELATIONS
