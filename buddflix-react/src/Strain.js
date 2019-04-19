@@ -3,9 +3,9 @@ import React from 'react';
 
 const Strain = ({ weed, index }) => {
 
-    const effectList = weed.effects.map((effect) => {
+    const effectList = weed.effects.map((effect, weedIndex) => {
         return (
-            <li key={index}>{effect}</li>
+            <li key={weedIndex}>{effect}</li>
         )
     })
 
