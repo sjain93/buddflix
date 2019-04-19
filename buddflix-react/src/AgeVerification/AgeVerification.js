@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import useForm from 'react-hook-form';
-import './age.css';
+import './age.scss';
 import welcome from '../welcomeBanner.png';
 
 

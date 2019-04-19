@@ -1,14 +1,16 @@
+@import '../variables.scss';
+
 
 p {
     color: white;
     text-align: center;
+    font-family: $link-font;
 }
 
 h1 {
   text-align: center;
   color: white;
 }
-
 
 .modal {
     max-height: calc(100% - 100px);
