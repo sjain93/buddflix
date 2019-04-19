@@ -1,11 +1,7 @@
 
 import React, { useState } from 'react';
 import useForm from 'react-hook-form';
-<<<<<<< HEAD
-import './age.css';
-=======
 import './age.scss';
->>>>>>> modal
 import welcome from '../welcomeBanner.png';
 
 
@@ -32,7 +28,7 @@ const AgeVerification = () => {
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <img src={welcome} alt="Welcome-Banner" className="img-responsive"></img>
                     <p>Please Enter Your Age</p>
-                    
+
                     <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
                     {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
 
