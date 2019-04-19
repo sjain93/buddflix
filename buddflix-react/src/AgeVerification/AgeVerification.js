@@ -4,7 +4,6 @@ import useForm from 'react-hook-form';
 import './age.scss';
 import welcome from '../welcomeBanner.png';
 
-
 const AGE_KEY = 'ageVerified';
 
 const AgeVerification = () => {

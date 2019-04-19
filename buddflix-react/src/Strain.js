@@ -4,8 +4,7 @@ import Movie from './Movie'
 
 const Strain = ({ weed, index, }) => {
 
-
-    const [strainSelected, setStrainSelected] = useState({})
+    const [strainSelected, setStrainSelected] = useState(weed)
 
 
     return (
@@ -16,7 +15,6 @@ const Strain = ({ weed, index, }) => {
                 </button>
         </div>
             <Movie strainSelected={strainSelected} key={strainSelected.id} />
-
     </>
 
 
