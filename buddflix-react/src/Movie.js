@@ -9,10 +9,20 @@ const api_key = process.env.REACT_APP_TMDB_API_KEY
 console.log(strainSelected.effects)
 let effectList = strainSelected.effects
 
-const positiveEffects = effectList.filter((effect) => effect['category'] === 'positive'); 
+const positiveEffects = effectList.filter((effect) => effect['category'] === 'positive');
+let effectArray = [];
+let listGenerator = positiveEffects.forEach(function(item) {
+    effectArray.push(item.name);
+})
+console.log(effectArray);
 
-console.log(positiveEffects)
+function selectRandom(array) {
+    let num = Math.floor((Math.random() * array.length));
+    return(array[num]);
+}
 
+console.log(selectRandom(effectArray));
+console.log(positiveEffects);
 
 
 // strainEffects.push(strainSelected.effects);
@@ -21,10 +31,9 @@ console.log(positiveEffects)
 //     console.log(item['category'])
 // })
 // console.log(effectList());
-    
-    
-        
-        
+
+
+
 
 
 return (
