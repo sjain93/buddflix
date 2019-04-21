@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Spring } from 'react-spring/renderprops'
 import StrainList from './StrainList';
 import axios from 'axios';
+import './Categories.scss';
 
 const url = 'http://localhost:8000/api/race/'
 
@@ -16,7 +18,13 @@ const Categories = () => {
     }, []);
 
     return (
-        <div>
+        <Spring
+        from={{opacity: 0, marginTop: -500}}
+        to={{opacity: 1, marginTop: 0}}
+        >
+        {props => (
+            <div style={props}>
+            <div className="races">
             {races.map(race => (
                 <button onClick={() => setSelectedRace(race)} key={race.id}>
                     {race.name}
@@ -24,6 +32,10 @@ const Categories = () => {
             ))}
             <StrainList selectedRace={selectedRace} />
         </div>
+            </div>
+        )}
+        </Spring>
+
     )
 }
 

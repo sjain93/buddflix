@@ -21,7 +21,7 @@ const StrainList = ({ selectedRace }) => {
     ));
 
     return (
-        <div>
+        <div className="strains">
             <h2>{selectedRace.name}</h2>
             {strainDisplay}
         </div>
