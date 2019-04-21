@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Strain from './Strain';
 import axios from 'axios';
+import './Categories.scss';
 
 
 const StrainList = ({ selectedRace }) => {
@@ -21,10 +22,13 @@ const StrainList = ({ selectedRace }) => {
     ));
 
     return (
+        <>
+        <h2>{selectedRace.name}</h2>
         <div className="strains">
-            <h2>{selectedRace.name}</h2>
+
             {strainDisplay}
         </div>
+        </>
     )
 }
 

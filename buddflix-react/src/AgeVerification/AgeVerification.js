@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import useForm from 'react-hook-form';
 import './age.scss';
-import welcome from '../welcomeBanner.png';
+import welcome from '../Images/welcomeBanner.png';
 
 const AGE_KEY = 'ageVerified';
 

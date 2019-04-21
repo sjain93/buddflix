@@ -1,7 +1,7 @@
 import React from 'react';
 import Slideshow from './Slideshow/Slideshow'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Categories from "./Categories";
+import Categories from "./StrainComponets/Categories";
 
 const Home = () => {
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './Nav.scss'
-import Categories from "../Categories";
+import Categories from "../StrainComponets/Categories";
 import About from '../About';
 import Home from '../Home';
-import logo from '../logo.png';
+import logo from '../Images/logo.png';
 
 const Navigation = () => {
     return (
@@ -27,11 +27,11 @@ const Navigation = () => {
             </nav>
     </div>
     </div>
-            
+
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
             <Route path="/categories" exact component={Categories} />
-            
+
     </Router>
 );
 }
