@@ -26,8 +26,8 @@ const Categories = () => {
             <div style={props}>
             <div className="races">
             {races.map(race => (
-                <button onClick={() => setSelectedRace(race)} key={race.id}>
-                    {race.name}
+                <button className='btn' onClick={() => setSelectedRace(race)} key={race.id}>
+                    <span>{race.name}</span>
                 </button>
             ))}
             </div>

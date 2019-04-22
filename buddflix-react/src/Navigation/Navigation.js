@@ -21,7 +21,7 @@ const Navigation = () => {
                         <Link to="/about">About</Link>
                     </li>
                     <li className='link-hover'>
-                        <Link to="/categories">Categories</Link>
+                        <Link to="/categories">Pick a Strain</Link>
                     </li>
                 </ul>
             </nav>

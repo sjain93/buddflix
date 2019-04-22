@@ -23,7 +23,7 @@ const StrainList = ({ selectedRace }) => {
 
     return (
         <>
-        <h2>{selectedRace.name}</h2>
+        <h2 className='strain-race'>{selectedRace.name}</h2>
         <div className="strains">
 
             {strainDisplay}
