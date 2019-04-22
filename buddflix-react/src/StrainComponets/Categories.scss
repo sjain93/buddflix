@@ -1,12 +1,58 @@
+@import '../variables.scss';
+
 .races {
     background-color: red;
 }
 
 .strains {
-    background-color: dodgerblue;
+    background-color:black;
+    border-radius: 25px;
+    box-shadow: 11px 15px 5px -5px rgba(255,5,18,0.49);
 }
 
 .strains {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.strain-button {
+    background-image: url(../Images/strain.png);
+    padding: 20px;
+    background-size: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    box-shadow:4px 4px 0px 0px white;
+    transition: all 300ms ease-in-out;
+    left:0;
+    top:0;
+    position:relative;
+    border-radius: 25px;
+}
+
+.strain-button:hover {
+    left:4px;
+    top:4px;
+    box-shadow:0 0 0 0 white;
+  }
+
+
+.strain-name {
+    background-color: black;
+    padding: 3px 0;
+    font-family: $link-font;
+    font-size: 1.2em;
+    border-radius: 25px;
+}
+
+.button-div {
+    display: block;
+    margin: 10px auto;
+
 }

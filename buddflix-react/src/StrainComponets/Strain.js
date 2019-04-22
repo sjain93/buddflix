@@ -16,9 +16,9 @@ const Strain = ({ weed, index, }) => {
     >
         {props => (
             <div style={props}>
-                <div>
-                    <button onClick={() => setStrainSelected(weed)} key={weed.id}>
-                        {weed.name}
+                <div className='button-div'>
+                    <button className='strain-button' onClick={() => setStrainSelected(weed)} key={weed.id}>
+                       <h1 className='strain-name'>{weed.name}</h1>
                     </button>
                 </div>
             </div>

@@ -30,8 +30,9 @@ const Categories = () => {
                     {race.name}
                 </button>
             ))}
+            </div>
             <StrainList selectedRace={selectedRace} />
-        </div>
+
             </div>
         )}
         </Spring>
