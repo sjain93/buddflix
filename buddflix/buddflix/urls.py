@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
-from buddflix.resources import RaceResource, CategoryResource, FlavourResource, EffectResource,StrainResource
+from buddflix.resources import RaceResource, CategoryResource, FlavourResource, EffectResource,StrainResource, GenreResource
 
 race_resource = RaceResource()
 category_resource = CategoryResource()
 flavour_resource = FlavourResource()
 effect_resource = EffectResource()
 strain_resource = StrainResource()
+genre_resource = GenreResource()
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -30,4 +31,5 @@ urlpatterns = [
     url('api/', include(flavour_resource.urls)),
     url('api/', include(effect_resource.urls)),
     url('api/', include(strain_resource.urls)),
+    url('api/', include(genre_resource.urls)),
 ]

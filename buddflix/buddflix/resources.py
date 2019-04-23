@@ -1,7 +1,7 @@
 from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie import fields
 from tastypie.authorization import ReadOnlyAuthorization
-from buddflix.models import Race, Effect, Category, Flavour, Strain
+from buddflix.models import Race, Effect, Category, Flavour, Strain, Genre
 
 class RaceResource(ModelResource):
     class Meta:
@@ -27,6 +27,18 @@ class EffectResource(ModelResource):
     class Meta:
         queryset = Effect.objects.all()
         resource_name = 'effect'
+        authorization = ReadOnlyAuthorization()
+
+class GenreResource(ModelResource):
+    race = fields.ForeignKey(
+        RaceResource, attribute='race', null=True, full=True)
+    class Meta:
+        queryset = Genre.objects.all()
+        filtering = {
+            'name': ALL_WITH_RELATIONS,
+            'race': ALL_WITH_RELATIONS
+        }
+        resource_name = 'genre'
         authorization = ReadOnlyAuthorization()
     
 class StrainResource(ModelResource):
