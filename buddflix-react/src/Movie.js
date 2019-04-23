@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
+import axios from 'axios';
 
 
 const Movie = ({ strainSelected }) => {
 const [movie, setMovie] = useState([])
 const api_key = process.env.REACT_APP_TMDB_API_KEY
-// const url = `https://api.themoviedb.org/3/keyword/${strainSelected.effect}/movies?api_key=${api_key}&language=en-US&include_adult=false`    
+// const url = `https://api.themoviedb.org/3/keyword/${strainSelected.effect}/movies?api_key=${api_key}&language=en-US&include_adult=false` 
+
 console.log(strainSelected.effects)
 let effectList = strainSelected.effects
 
@@ -32,6 +33,20 @@ console.log(positiveEffects);
 // })
 // console.log(effectList());
 
+
+useEffect(() => {
+    if (strainSelected) {
+        let raceId = strainSelected.race.id
+        console.log(raceId)
+        const url = `http://localhost:8000/api/genre?race=1`
+        axios.get(url, {headers: {
+                'Access-Control-Allow-Origin': '*',
+            }} ).then(response => {
+            console.log(response.data);
+            //  setStrains(results);
+        });
+    }
+}, [strainSelected])
 
 return (
     <>
