@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Slide } from 'react-slideshow-image';
-import strain from '../strain.jpg';
-import welcome from '../welcomeBanner.png';
-import Avengers from '../Avengers.png'
+import strain from '../Images/strain.jpg';
+import welcome from '../Images/welcomeBanner.png';
+import Avengers from '../Images/Avengers.png'
 import './Slideshow.scss';
 import axios from 'axios';
 
