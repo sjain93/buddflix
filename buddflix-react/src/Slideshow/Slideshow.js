@@ -35,7 +35,9 @@ const Slideshow = () => {
             let newImages = [{'url': welcome, 'title': null }];
             const results = response.data.results.slice(3, 7);
             results.forEach(element => {
-                newImages.push({'url':imgBaseUrl + element.backdrop_path, 'title': element.title});
+                if (element.backdrop_path) {
+                    newImages.push({'url':imgBaseUrl + element.backdrop_path, 'title': element.title});
+                }
             });
             setImages(newImages);
         });
