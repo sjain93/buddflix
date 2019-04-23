@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { Spring } from 'react-spring/renderprops'
 import StrainList from './StrainList';
 import axios from 'axios';
@@ -17,16 +17,24 @@ const Categories = () => {
         });
     }, []);
 
+    const categoriesRef = useRef();
+
+    const scrollToMyRef = () => window.scrollTo(0, categoriesRef)
+    useLayoutEffect(() => {
+        window.scrollTo(0, categoriesRef)
+        scrollToMyRef()
+    },)
+
     return (
         <Spring
         from={{opacity: 0, marginTop: -500}}
         to={{opacity: 1, marginTop: 0}}
         >
         {props => (
-            <div style={props}>
-            <div className="races">
+            <div style={props} >
+            <div className="races" ref={categoriesRef} >
             {races.map(race => (
-                <button className='btn' onClick={() => setSelectedRace(race)} key={race.id}>
+                <button ref={categoriesRef} className='btn' onClick={() => setSelectedRace(race)} key={race.id}>
                     <span>{race.name}</span>
                 </button>
             ))}

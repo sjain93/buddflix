@@ -6,12 +6,14 @@ import './StrainComponets/Categories.scss';
 
 const Home = () => {
 
+
+
 return (
     <>
     <Slideshow />
         <Router>
             <div className='pick-a-strain'>
-                <Link to="/categories">Get started. Pick a strain!</Link>
+                <Link to="/categories" >Get started. Pick a strain!</Link>
             </div>
         <Route path="/categories" exact component={Categories} />
         </Router>

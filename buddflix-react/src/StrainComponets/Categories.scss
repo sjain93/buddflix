@@ -1,5 +1,9 @@
 @import '../variables.scss';
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .pick-a-strain {
     padding: 20px;
     width: 150px;
