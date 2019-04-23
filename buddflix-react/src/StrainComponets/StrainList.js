@@ -22,7 +22,7 @@ const StrainList = ({ selectedRace }) => {
     }, [strains])
 
     const strainDisplay = strains.map((weed, index) => (
-        <Strain weed={weed} key={index} />
+        <Strain selectedRace={selectedRace} weed={weed} key={index} />
     ));
 
     return (
