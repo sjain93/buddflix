@@ -53,7 +53,7 @@ class StrainResource(ModelResource):
     flavours = fields.ToManyField(
         'buddflix.resources.FlavourResource', 'flavours', null=True, full=True)
     class Meta:
-        queryset = Strain.objects.all()
+        queryset = Strain.objects.all().order_by('?')
         filtering = {
             'name': ALL_WITH_RELATIONS,
             'race': ALL_WITH_RELATIONS,
