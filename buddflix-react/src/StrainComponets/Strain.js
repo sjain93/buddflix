@@ -15,8 +15,7 @@ function selectRandom(array) {
 
     useEffect(() => {
 
-            if (selectedRace.id)
-            {
+        if (selectedRace.id) {
             let tempGenre = []
             let raceId = selectedRace.id
             const url = `http://localhost:8000/api/genre?race=${raceId}`
@@ -26,7 +25,9 @@ function selectRandom(array) {
                     tempGenre.push(item.name)
                     setGenre(tempGenre)
                 })
-            })}}, [selectedRace]);
+            })
+        }
+    }, [selectedRace]);
 
     console.log(`Genre is`+ genre)
     return (
