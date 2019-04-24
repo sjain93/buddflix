@@ -15,19 +15,18 @@ function selectRandom(array) {
 
     useEffect(() => {
 
-            if (selectedRace.id){
+            if (selectedRace.id)
+            {
             let tempGenre = []
             let raceId = selectedRace.id
             const url = `http://localhost:8000/api/genre?race=${raceId}`
             axios.get(url).then(response => {
                 let respObj = response.data.objects;
-                respObj.forEach((item) =
+                respObj.forEach((item) => {
                     tempGenre.push(item.name)
                     setGenre(tempGenre)
-            ])
-                //  setStrains(results);
-            };
-        }, [selectedRace]);
+                })
+            })}}, [selectedRace]);
 
     console.log(`Genre is`+ genre)
     return (
