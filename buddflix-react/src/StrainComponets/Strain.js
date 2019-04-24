@@ -22,7 +22,7 @@ function selectRandom(array) {
             axios.get(url).then(response => {
                 let respObj = response.data.objects;
                 respObj.forEach((item) => {
-                    tempGenre.push(item.name)
+                    tempGenre.push(item.tmdb_id)
                     setGenre(tempGenre)
                 })
             })
