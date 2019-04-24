@@ -4,36 +4,35 @@ import { Spring } from 'react-spring/renderprops'
 import './Categories.scss';
 import Movie from '../Movie';
 
-const Strain = ({ weed, index, selectedRace}) => {
-    const [genre, setGenre] = useState([]);
-    const [selectedGenre, setSelectedGenre] = useState();
+const Strain = ({ weed, index, setSelectedGenre, genres }) => {
+    // const [genre, setGenre] = useState([]);
+    // const [selectedGenre, setSelectedGenre] = useState();
 
-function selectRandom(array) {
-    let num = Math.floor((Math.random() * array.length));
-    return (array[num]);
-}
+    // useEffect(() => {
 
-    useEffect(() => {
-
-        if (selectedRace.id) {
-            let tempGenre = []
-            let raceId = selectedRace.id
-            const url = `http://localhost:8000/api/genre?race=${raceId}`
-            const fetchData = async () => {
-            const result = await axios.get(url)
-                let respObj = result.data.objects;
-                respObj.forEach((item) => {
-                    tempGenre.push(item.tmdb_id)
-                    setGenre(tempGenre)
+    //     if (selectedRace.id) {
+    //         let tempGenre = []
+    //         let raceId = selectedRace.id
+    //         const url = `http://localhost:8000/api/genre?race=${raceId}`
+    //         const fetchData = async () => {
+    //         const result = await axios.get(url)
+    //             let respObj = result.data.objects;
+    //             respObj.forEach((item) => {
+    //                 tempGenre.push(item.tmdb_id)
+    //                 setGenre(tempGenre)
                 
-                })
-            }
-            fetchData()
-            console.log(genre);
-        }
-    }, [selectedRace]);
+    //             })
+    //         }
+    //         fetchData()
+    //         //console.log(genre);
+    //     }
+    // }, [selectedRace]);
 
-    console.log(`Genre is`+ genre)
+    function selectRandom(array) {
+        let num = Math.floor((Math.random() * array.length));
+        return (array[num]);
+    }
+
     return (
     <>
     <Spring
@@ -43,14 +42,14 @@ function selectRandom(array) {
         {props => (
             <div style={props}>
                 <div className='button-div'>
-                    <button className='strain-button' onClick={() => setSelectedGenre(selectRandom(genre))}>
+                    <button className='strain-button' onClick={() => setSelectedGenre(selectRandom(genres))}>
                         <h1 className='strain-name'>{weed.name}</h1>
                     </button>
                 </div>
             </div>
             )}
     </Spring>
-    <Movie selectedGenre={selectedGenre} />
+    {/* <Movie selectedGenre={selectedGenre} /> */}
     </>
 
 
