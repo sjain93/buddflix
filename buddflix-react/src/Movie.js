@@ -3,36 +3,38 @@ import axios from 'axios';
 
 
 const Movie = ({ selectedGenre }) => {
-const [movie, setMovie] = useState([])
+const [movie, setMovie] = useState()
 const api_key = process.env.REACT_APP_TMDB_API_KEY
-// const url = `https://api.themoviedb.org/3/keyword/${strainSelected.effect}/movies?api_key=${api_key}&language=en-US&include_adult=false` 
 
-// let effectList = selectedRace.effects
 
-// const positiveEffects = effectList.filter((effect) => effect['category'] === 'positive');
-// let effectArray = [];
-// let listGenerator = positiveEffects.forEach(function(item) {
-//     effectArray.push(item.name);
-// })
-// console.log(effectArray);
+
+
+useEffect(() => {
+        const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=${selectedGenre}`
+        const fetchData = async () => {
+        const result = await axios.get(url)
+        console.log(url)
+        const randomMovie = selectRandom(result.data.results);
+        setMovie(randomMovie);
+
+        }
+    fetchData();
+    console.log(movie);
+
+
+}, [selectedGenre])
+
+
+
 
 function selectRandom(array) {
     let num = Math.floor((Math.random() * array.length));
     return(array[num]);
 }
 
-// console.log(selectRandom(effectArray));
-// console.log(positiveEffects);
 
 
-// strainEffects.push(strainSelected.effects);
-// console.log(strainEffects);
-// const effectList = strainEffects.forEach(function(item) {
-//     console.log(item['category'])
-// })
-// console.log(effectList());
-
-console.log(`Selected genre is` + selectedGenre);
+console.log(`Selected genre is ` + selectedGenre);
 
 return (
     <>

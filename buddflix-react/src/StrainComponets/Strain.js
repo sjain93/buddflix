@@ -6,7 +6,7 @@ import Movie from '../Movie';
 
 const Strain = ({ weed, index, selectedRace}) => {
     const [genre, setGenre] = useState([]);
-    const [selectedGenre, setSelectedGenre] = useState(null);
+    const [selectedGenre, setSelectedGenre] = useState();
 
 function selectRandom(array) {
     let num = Math.floor((Math.random() * array.length));
@@ -19,13 +19,17 @@ function selectRandom(array) {
             let tempGenre = []
             let raceId = selectedRace.id
             const url = `http://localhost:8000/api/genre?race=${raceId}`
-            axios.get(url).then(response => {
-                let respObj = response.data.objects;
+            const fetchData = async () => {
+            const result = await axios.get(url)
+                let respObj = result.data.objects;
                 respObj.forEach((item) => {
                     tempGenre.push(item.tmdb_id)
                     setGenre(tempGenre)
+                
                 })
-            })
+            }
+            fetchData()
+            console.log(genre);
         }
     }, [selectedRace]);
 
