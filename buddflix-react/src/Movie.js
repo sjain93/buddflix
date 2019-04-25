@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './movie.scss';
-
+import Trailer from './Trailer'
 
 const Movie = ({ selectedGenre}) => {
+
 const [movie, setMovie] = useState()
+const [movieId, setMovieId] = useState()
 const movieRef = useRef(null)
 const api_key = process.env.REACT_APP_TMDB_API_KEY
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
+
 
 
 useEffect(() => {
@@ -27,9 +30,11 @@ useEffect(() => {
 
 }, [selectedGenre])
 
+
 useEffect(() => {
     window.scrollTo(0, movieRef.current.offsetTop)
 }, [movie])
+
 
 function selectRandom(array) {
     let num = Math.floor((Math.random() * array.length));
@@ -41,8 +46,7 @@ console.log('Movie:', movie)
 
 const renderMovie = movie && (
     <>
-
-            <div className='movie-box'>
+        <div className='movie-box'>
                 <h1 className='movie-title'>{movie.title}</h1>
                     <div className="movie-poster">
                         <img src={`${imgBaseUrl}${movie.poster_path}`} alt={movie.title} />
@@ -64,6 +68,8 @@ return (
     <div>
         {renderMovie}
     </div>
+    <button onClick={ ()=> setMovieId(movie.id)}>View Trailer</button>
+    { movieId && <Trailer movieId={movieId} />}
     <div ref={movieRef}></div>
     </>
 )
