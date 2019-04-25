@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './movie.scss';
+import './Movie.scss';
 import Trailer from './Trailer'
 
 const Movie = ({ selectedGenre}) => {
 
 const [movie, setMovie] = useState()
-const [movieId, setMovieId] = useState()
+// const [movieId, setMovieId] = useState()
 const movieRef = useRef(null)
 const api_key = process.env.REACT_APP_TMDB_API_KEY
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
