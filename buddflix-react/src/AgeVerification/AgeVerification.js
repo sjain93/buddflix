@@ -29,7 +29,9 @@ const AgeVerification = () => {
                     <p>Please Enter Your Age</p>
 
                     <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
-                    {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
+                    <p>
+                        {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
+                    </p>
 
                     <input type="submit" />
                 </form>
