@@ -8,6 +8,7 @@ const [movie, setMovie] = useState()
 const movieRef = useRef(null)
 const api_key = process.env.REACT_APP_TMDB_API_KEY
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
+const backdropBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
 
 
 useEffect(() => {
@@ -40,13 +41,20 @@ console.log('Movie:', movie)
 
 const renderMovie = movie && (
     <>
-        <h1 className='movie-title'>{movie.title}</h1>
+
             <div className='movie-box'>
-                <img src={`${imgBaseUrl}${movie.poster_path}`} alt={movie.title} />
-                <div className='movie-details'>
-                    <h2>Movie Overview</h2>
-                        <p>{movie.overview}</p>
+                <h1 className='movie-title'>{movie.title}</h1>
+                    <div className="movie-poster">
+                        <img src={`${imgBaseUrl}${movie.poster_path}`} alt={movie.title} />
+                    </div>
+                    <div className="back-drop">
+                        <img src={`${backdropBaseUrl}${movie.backdrop_path}`} alt={movie.title} />
+                            <div className='movie-details'>
+                                <p>{movie.overview}</p>
+                            </div>
                 </div>
+
+
         </div>
     </>
 )
