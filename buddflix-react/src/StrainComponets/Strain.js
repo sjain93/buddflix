@@ -1,32 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Spring } from 'react-spring/renderprops'
 import './Categories.scss';
-import Movie from '../Movie';
 
 const Strain = ({ weed, index, setSelectedGenre, genres }) => {
-    // const [genre, setGenre] = useState([]);
-    // const [selectedGenre, setSelectedGenre] = useState();
-
-    // useEffect(() => {
-
-    //     if (selectedRace.id) {
-    //         let tempGenre = []
-    //         let raceId = selectedRace.id
-    //         const url = `http://localhost:8000/api/genre?race=${raceId}`
-    //         const fetchData = async () => {
-    //         const result = await axios.get(url)
-    //             let respObj = result.data.objects;
-    //             respObj.forEach((item) => {
-    //                 tempGenre.push(item.tmdb_id)
-    //                 setGenre(tempGenre)
-                
-    //             })
-    //         }
-    //         fetchData()
-    //         //console.log(genre);
-    //     }
-    // }, [selectedRace]);
 
     function selectRandom(array) {
         let num = Math.floor((Math.random() * array.length));

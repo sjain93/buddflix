@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Spring } from 'react-spring/renderprops'
 import StrainList from './StrainList';
 import axios from 'axios';

@@ -1,0 +1,64 @@
+@import './variables.scss';
+
+.movie-title {
+    color:white;
+    font-family: $title-font;
+    grid-column: 1/4;
+    padding: 25px;
+    font-size: 3em;
+    text-shadow: 5px 2px 2px #CE0B0B;
+}
+
+.movie-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgb(0, 0, 0);
+    border-radius: 25px;
+    box-shadow: $box-shadow;
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.movie-details {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.678);
+    width: 80%;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow:4px 4px 0px 0px white;
+
+}
+
+.back-drop {
+    grid-column: 2/4;
+    margin: 0 auto;
+    display: block;
+}
+
+.back-drop img{
+    border-radius: 25px;
+    max-width: 80%;
+    box-shadow:4px 4px 0px 0px white;
+    display: block;
+    margin: 0 auto;
+
+}
+
+
+.movie-poster {
+    grid-column: 1/2;
+    top: 225px;
+    background-color: black;
+img {
+    max-width: 70%;
+    margin: 0 auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow:4px 4px 0px 0px white;
+
+}
+}
