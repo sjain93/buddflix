@@ -45,10 +45,6 @@ const StrainList = ({ selectedRace }) => {
         <Strain genres={genres} weed={weed} key={index} setSelectedGenre={setSelectedGenre} />
     ));
 
-    function selectRandom(array) {
-        let num = Math.floor((Math.random() * array.length));
-        return (array[num]);
-    }
 
     return (
         <>
