@@ -11,7 +11,7 @@ class App extends Component {
 
         <>
           <Navigation />
-          {/* <AgeVerification /> */}
+          <AgeVerification />
         </>
 
     );
