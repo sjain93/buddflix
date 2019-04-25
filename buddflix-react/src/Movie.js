@@ -57,9 +57,8 @@ const renderMovie = movie && (
                                 <p>{movie.overview}</p>
                             </div>
                 </div>
-
-
-        </div>
+             </div>
+             <Trailer movieId={movie.id} />
     </>
 )
 
@@ -68,8 +67,8 @@ return (
     <div>
         {renderMovie}
     </div>
-    <button onClick={ ()=> setMovieId(movie.id)}>View Trailer</button>
-    { movieId && <Trailer movieId={movieId} />}
+    {/* <button onClick={ ()=> setMovieId(movie.id)}>View Trailer</button>
+    { movieId && <Trailer movieId={movieId} />} */}
     <div ref={movieRef}></div>
     </>
 )
