@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Strain from './Strain';
-import Movie from '../Movie';
+import Movie from '../movieComponents/Movie';
 import axios from 'axios';
 import './Categories.scss';
 
