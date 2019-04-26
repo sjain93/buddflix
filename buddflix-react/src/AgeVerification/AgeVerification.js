@@ -27,13 +27,12 @@ const AgeVerification = () => {
                 <form onSubmit={handleSubmit(onSubmit)} >
                     <img src={welcome} alt="Welcome-Banner" className="img-responsive"></img>
                     <p>Please Enter Your Age</p>
-
-                    <input type="number" name="age" ref={register({ min: 19 })} /> {/* apply a Refex validation */}
+                    <input type="number" name="age" ref={register({ required: true, min: 19 }, )} /> {/* apply a Refex validation */}
                     <p>
                         {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
-                    </p>
-
-                    <input type="submit" />
+                    </p> 
+                    <input type='submit' />   
+                    
                 </form>
             </div>
         }
