@@ -7,14 +7,11 @@ import welcome from '../Images/welcomeBanner.png';
 const AGE_KEY = 'ageVerified';
 
 const AgeVerification = () => {
-    let ageVerified = false // !window.localStorage.getItem(AGE_KEY);
-    // if (date greater than 24 hours) {
-
-    // }
+    let ageVerified = false 
     const [visible, setVisible] = useState(!ageVerified);
 
-    const { register, handleSubmit, errors } = useForm() // initialise the hook
-    const onSubmit = (data) => {
+    const { register, handleSubmit, errors } = useForm()
+    const onSubmit = () => {
         setVisible(false);
         window.localStorage.setItem(AGE_KEY, true);
 
@@ -32,7 +29,6 @@ const AgeVerification = () => {
                         {errors.age && 'You must be 19 years old or older to enter this website'} {/* error message */}
                     </p> 
                     <input type='submit' />   
-                    
                 </form>
             </div>
         }

@@ -15,7 +15,7 @@ return (
             <div className='pick-a-strain'>
                 <Link to="/categories" >Get started. Pick a strain!</Link>
             </div>
-        <Route path="/categories" exact component={Categories} />
+            <Route path="/categories" exact component={Categories} />
         </Router>
     </>
 )

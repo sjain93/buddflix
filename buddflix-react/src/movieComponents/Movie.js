@@ -4,32 +4,24 @@ import './Movie.scss';
 import Trailer from './Trailer'
 
 const Movie = ({ selectedGenre}) => {
-
 const [movie, setMovie] = useState()
-// const [movieId, setMovieId] = useState()
 const movieRef = useRef(null)
 const api_key = process.env.REACT_APP_TMDB_API_KEY
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/'
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
 
-
-
 useEffect(() => {
 
-    //console.log('Fire effect', selectedGenre)
+    
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=${selectedGenre}`
     const fetchData = async () => {
         const result = await axios.get(url)
-        // console.log(movie);
         const randomMovie = selectRandom(result.data.results);
         console.log(randomMovie.title);
         setMovie(randomMovie);
-        // console.log("movie after setting: " + movie);
     }
     fetchData();
-
 }, [selectedGenre])
-
 
 useEffect(() => {
     window.scrollTo(0, movieRef.current.offsetTop)
@@ -41,7 +33,6 @@ function selectRandom(array) {
     return(array[num]);
 }
 
-// console.log(`Selected genre is ` + selectedGenre);
 console.log('Movie:', movie)
 
 const renderMovie = movie && (
@@ -51,27 +42,26 @@ const renderMovie = movie && (
                     <div className="movie-poster">
                         <img src={`${imgBaseUrl}${movie.poster_path}`} alt={movie.title} />
                     </div>
-                    <div className="back-drop">
-                        <img src={`${backdropBaseUrl}${movie.backdrop_path}`} alt={movie.title} />
-                            <div className='movie-details'>
-                                <p>{movie.overview}</p>
-                            </div>
+            <div className="back-drop">
+                <img src={`${backdropBaseUrl}${movie.backdrop_path}`} alt={movie.title} />
+                <div className='movie-details'>
+                    <p>{movie.overview}</p>
                 </div>
-             </div>
-             <Trailer movieId={movie.id} />
+            </div>
+        </div>
+            <Trailer movieId={movie.id} />
     </>
 )
 
 return (
     <>
-    <div>
-        {renderMovie}
-    </div>
-    {/* <button onClick={ ()=> setMovieId(movie.id)}>View Trailer</button>
-    { movieId && <Trailer movieId={movieId} />} */}
-    <div ref={movieRef}></div>
+        <div>
+            {renderMovie}
+        </div>
+        <div ref={movieRef}></div>
     </>
 )
+
 }
 
 export default Movie;

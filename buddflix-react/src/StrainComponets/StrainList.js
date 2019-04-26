@@ -48,11 +48,11 @@ const StrainList = ({ selectedRace }) => {
 
     return (
         <>
-        <h2 className='strain-race'  ref={strainsRef}>{selectedRace.name}</h2>
-        <div className="strains">
-            {strainDisplay}
-        </div>
-        {selectedGenre && <Movie selectedGenre={selectedGenre} />}
+            <h2 className='strain-race'  ref={strainsRef}>{selectedRace.name}</h2>
+                <div className="strains">
+                    {strainDisplay}
+                </div>
+            {selectedGenre && <Movie selectedGenre={selectedGenre} />}
         </>
     )
 }

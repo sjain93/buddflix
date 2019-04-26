@@ -20,8 +20,6 @@ const Categories = () => {
 
     useEffect(() => {
         window.scrollTo(0, raceRef.current.offsetTop)
-        // const t = setTimeout(() => window.scrollTo(0, raceRef.current.offsetTop), 280)
-        // return () => clearTimeout(t)
     }, [races]);
 
     return (

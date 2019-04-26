@@ -6,7 +6,6 @@ const Trailer = ( {movieId} ) => {
     const api_key = process.env.REACT_APP_TMDB_API_KEY
     const [trailerId, setTrailerId] = useState()
 
-
     useEffect(() => {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&append_to_response=videos`
     axios.get(url).then(response => {

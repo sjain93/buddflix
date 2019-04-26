@@ -11,26 +11,19 @@ const Strain = ({ weed, index, setSelectedGenre, genres }) => {
 
     return (
     <>
-    <Spring
-    from={{opacity: 0, marginLeft: -500}}
-    to={{opacity: 1, marginLeft: 0}}
-    >
-        {props => (
-            <div style={props}>
-                <div className='button-div'>
-                    <button className='strain-button' onClick={() => setSelectedGenre(selectRandom(genres))}>
-                        <h1 className='strain-name'>{weed.name}</h1>
-                    </button>
+        <Spring from={{opacity: 0, marginLeft: -500}} to={{opacity: 1, marginLeft: 0}}>
+            {props => (
+                <div style={props}>
+                    <div className='button-div'>
+                        <button className='strain-button' onClick={() => setSelectedGenre(selectRandom(genres))}>
+                            <h1 className='strain-name'>{weed.name}</h1>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            )}
-    </Spring>
-    {/* <Movie selectedGenre={selectedGenre} /> */}
+                )}
+        </Spring>
     </>
-
-
     )
-
 }
 
 export default Strain;

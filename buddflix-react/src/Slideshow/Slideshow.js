@@ -21,7 +21,6 @@ const properties = {
 }
 
 const api_key = process.env.REACT_APP_TMDB_API_KEY
-// const url = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}`
 const url = `https://api.themoviedb.org/3/keyword/54169/movies?api_key=${api_key}&language=en-US&include_adult=false`
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'
