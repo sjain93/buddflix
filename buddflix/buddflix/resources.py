@@ -64,7 +64,6 @@ class StrainResource(ModelResource):
         authorization = ReadOnlyAuthorization()
     
     def dehydrate(self, bundle):
-        # print(bundle.data['effects'][0].data['resource_uri'])
         effectsArray = []
         flavoursArray = []
         for b in bundle.data['effects']:
