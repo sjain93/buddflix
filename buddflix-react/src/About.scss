@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.about-header, .about-p {
+.about-header, .about-p, .img-caption {
     color: black;
 }
 
@@ -10,4 +10,11 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+@media (min-width: 768px) {
+    .budds {
+        width: 50%;
+        height: 50%;
+    }
 }
