@@ -4,7 +4,7 @@ import StrainList from './StrainList';
 import axios from 'axios';
 import './Categories.scss';
 
-const url = 'http://localhost:8000/api/race/'
+const url = 'https://buddflix.herokuapp.com/api/race/'
 
 const Categories = () => {
     const [races, setRaces] = useState([]);

@@ -12,7 +12,7 @@ const StrainList = ({ selectedRace }) => {
 
     useEffect(() => {
         if (selectedRace.id) {
-            const url = `http://localhost:8000/api/strain/?race=${selectedRace.id}`
+            const url = `https://buddflix.herokuapp.com/api/strain/?race=${selectedRace.id}`
             axios.get(url).then(response => {
                 const results = response.data.objects;
                 setStrains(results);
@@ -24,7 +24,7 @@ const StrainList = ({ selectedRace }) => {
         if (selectedRace.id) {
             let tempGenre = []
             let raceId = selectedRace.id
-            const url = `http://localhost:8000/api/genre?race=${raceId}`
+            const url = `https://buddflix.herokuapp.com/api/genre?race=${raceId}`
             const fetchData = async () => {
             const result = await axios.get(url)
                 let respObj = result.data.objects;
